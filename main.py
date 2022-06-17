@@ -9,11 +9,21 @@ def computepay(hours, rate):
     return pay
 
 
-sh = input('Hours Worked: ')
-sr = input('Rate of Pay: ')
-fh = float(sh)
-fr = float(sr)
-otp = (fh-40.0) * (fr * 0.5)
+while True:
+    try:
+        sh = input('Hours Worked: ')
+        sr = input('Rate of pay: ')
+        fh = float(sh)
+        fr = float(sr)
+        break
+    except:
+        print('Error: Please enter numerals only')
+
+
+otp = (fh - 40.0) * (fr * 0.5)
 xp = computepay(fh, fr)
-print("Pay: ", xp)
-print("Overtime accounted for ",otp," of your pay")
+rp = round(xp, 2)
+rotp = round(otp, 2)
+
+print("Pay: $",rp)
+print("Overtime accounted for $",rotp, " of your pay")
